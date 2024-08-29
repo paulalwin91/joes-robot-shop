@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 import { IProduct } from 'src/app/product-details/product.model';
+
+
+
+
 @Component({
   selector: 'bot-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+  styleUrls: ['./cart.component.css']  
 })
 export class CartComponent implements OnInit {
-  private cart: IProduct[] = [];
+  cart: IProduct[] = [];
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
@@ -16,9 +20,9 @@ export class CartComponent implements OnInit {
     });
   }
 
-  get cartItems() {
-    return this.cart;
-  }
+  // get cartItems() {
+  //   return this.cart;
+  // }
 
   get cartTotal() {
     return this.cart.reduce((prev, next) => {
